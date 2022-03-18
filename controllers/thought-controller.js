@@ -32,7 +32,7 @@ const thoughtController = {
     .select('-__v')
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id!' });
+        res.status(404).json({ message: 'No thought found with this id!' });
         return;
       }
       res.json(dbUserData);
