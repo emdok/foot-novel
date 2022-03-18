@@ -20,12 +20,8 @@ router
 // api/thoughts/:thoughtId
 router
   .route('/:thoughtId')
+  .get(getThoughtById)
   .put(updateThought)
   .delete(deleteThought);
-
-// api/thoughts/:thoughtId
-router
-  .route('/:thoughtId')
-  .get(getThoughtById);
 
 module.exports = router;
