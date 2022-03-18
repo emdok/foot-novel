@@ -6,6 +6,7 @@ const thoughtController = {
     console.log(body);
     Thought.create(body)
     .then(({ _id }) => {
+      console.log(_id);
       return User.findOneAndUpdate(
         { _id: params.userId },
         { $push: { thoughts: _id } },
