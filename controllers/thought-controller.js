@@ -24,7 +24,6 @@ const thoughtController = {
 
   // get a single thought by ID
   getThoughtById({ params }, res) {
-    console.log(params);
     Thought.findOne({ _id: params.thoughtId })
     .select('-__v')
     .then(dbUserData => {
