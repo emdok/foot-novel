@@ -24,11 +24,8 @@ const thoughtController = {
 
   // get a single thought by ID
   getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.id })
-    .populate({
-      path: 'thoughts',
-      select: '-__v'
-    })
+    console.log(params);
+    Thought.findOne({ _id: params.thoughtId })
     .select('-__v')
     .then(dbUserData => {
       if (!dbUserData) {
