@@ -98,6 +98,7 @@ const userController = {
 
   // delete user
   deleteUser({ params }, res) {
+    console.log(params);
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
         if (!dbUserData) {

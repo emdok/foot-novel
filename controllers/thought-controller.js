@@ -100,6 +100,16 @@ const thoughtController = {
     .catch(err => res.status(400).json(err));
   },
 
+  deleteAllThoughts({ req, res }) {
+    Thought.deleteMany({})
+    .then(function() {
+      console.log("Thoughts deleted");
+      return;
+    }).catch(function(error) {
+      console.log(error);
+    });
+  },
+
   // remove reaction from thought
   removeReaction({ params }, res) {
     console.log(params);
